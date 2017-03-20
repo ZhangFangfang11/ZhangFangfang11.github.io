@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ZhangFangfang</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Node.js模块导出exports和module.exports的区别（学习笔记）每一个Node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}1234(function(exports,require,module,__filename,__dirname)&amp;#123;       module.exports = ex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZhangFangfang">
+<meta property="og:url" content="http://yoursite.com/Node.js模块导出exports和module.exports的区别（学习笔记）.html">
+<meta property="og:site_name" content="ZhangFangfang">
+<meta property="og:description" content="Node.js模块导出exports和module.exports的区别（学习笔记）每一个Node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}1234(function(exports,require,module,__filename,__dirname)&amp;#123;       module.exports = ex">
+<meta property="og:updated_time" content="2017-03-20T09:52:31.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZhangFangfang">
+<meta name="twitter:description" content="Node.js模块导出exports和module.exports的区别（学习笔记）每一个Node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}1234(function(exports,require,module,__filename,__dirname)&amp;#123;       module.exports = ex">
+  
+    <link rel="alternative" href="/atom.xml" title="ZhangFangfang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">ZhangFangfang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">ZhangFangfang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">ZhangFangfang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/Node.js模块导出exports和module.exports的区别（学习笔记）.html" class="article-date">
+  	<time datetime="2017-03-20T09:52:31.332Z" itemprop="datePublished">2017-03-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Node-js模块导出exports和module-exports的区别（学习笔记）"><a href="#Node-js模块导出exports和module-exports的区别（学习笔记）" class="headerlink" title="Node.js模块导出exports和module.exports的区别（学习笔记）"></a>Node.js模块导出exports和module.exports的区别（学习笔记）</h4><p>每一个Node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(function(exports,require,module,__filename,__dirname)&#123;</div><div class="line">       module.exports = exports = &#123;&#125;</div><div class="line">       return module.exports</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1 、 module.exports = &#123;&#125;;</div></pre></td></tr></table></figure>
+<p>exports和module.exports指向同一块内存，但require()返回的是module.exports而不是exports</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &quot;difference&quot;</div><div class="line">exports.a = str;</div><div class="line">exports.b = function () &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>给 exports 赋值其实是给 module.exports 这个空对象添加了两个属性而已，上面的代码相当于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &quot;difference&quot;</div><div class="line">module.exports.a = str;</div><div class="line">module.exports.b = function () &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>先来看下exports和module.exports的使用</p>
+<p>使用exports</p>
+<p>app.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var s = require(&quot;./log&quot;);</div><div class="line">s.log(&quot;hello&quot;);</div></pre></td></tr></table></figure>
+<p>log.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports.log =function (str) &#123;</div><div class="line">    console.log(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用module.exports</p>
+<p>app.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var s = require(&quot;./log&quot;);</div><div class="line">s.log(&quot;hello&quot;);</div></pre></td></tr></table></figure></p>
+<p>log.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">module.exports =function (str) &#123;</div><div class="line">    console.log(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述两种用法都没问题，但如果这样使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  exports = function (str) &#123;</div><div class="line">    console.log(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行程序就会报错。</p>
+<p>前面的例子中给 exports 添加属性，只是对 exports 指向的内存做了修改。而上例则是对exports指向的内存进行了覆盖，使exports指向了一块新的内存，这样，exports和module.exports指向的内存并不是同一块，exports和module.exports并无任何关系。exports指向的内存有了变化，而module.exports指向的内存并无变化，仍为空对象{}。</p>
+<p>require得到的会是一个空对象，则会有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TypeError: s.log is not a function</div></pre></td></tr></table></figure></p>
+<p>报错信息。</p>
+<p>再看下面的例子</p>
+<p>app.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var x = require(&apos;./init&apos;);</div><div class="line"></div><div class="line">console.log(x.a)</div></pre></td></tr></table></figure>
+<p>init.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;a: 2&#125;</div><div class="line">exports.a = 1</div></pre></td></tr></table></figure>
+<p>运行app.js会有输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2</div></pre></td></tr></table></figure></p>
+<p>这也就是module.exports对象不为空的时候exports对象就自动忽略，因为module.exports通过赋值方式已经和exports对象指向的变量不同了，exports对象怎么改和module.exports对象没关系了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exports = module.exports = somethings</div></pre></td></tr></table></figure>
+<p>等价于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">module.exports = somethings</div><div class="line">exports = module.exports</div></pre></td></tr></table></figure></p>
+<p>原因也很简单， module.exports = somethings 是对 module.exports 进行了覆盖，此时 module.exports 和 exports 的关系断裂，module.exports 指向了新的内存块，而 exports 还是指向原来的内存块，为了让 module.exports 和 exports 还是指向同一块内存或者说指向同一个 “对象”，所以我们就 exports = module.exports 。</p>
+<p>最后，关于exports和module.exports的关系可以总结为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 、module.exports 初始值为一个空对象 &#123;&#125;，所以 exports 初始值也是 &#123;&#125;</div><div class="line">2 、exports 是指向的 module.exports 的引用</div><div class="line">3 、require() 返回的是 module.exports 而不是 exports</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="undefined" data-title="" data-url="http://yoursite.com/Node.js模块导出exports和module.exports的区别（学习笔记）.html"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 ZhangFangfang
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
